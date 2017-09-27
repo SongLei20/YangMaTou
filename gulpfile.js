@@ -7,8 +7,7 @@ var sass = require('gulp-ruby-sass');
 
 // 新建压缩合并JS文件的任务
 gulp.task('minifyJS', function () {
-	return gulp.src('./src/js.js').pipe(uglify())
-	.pipe(concat('all.js'))
+	return gulp.src('./src/js/*.js').pipe(uglify())
 	.pipe(gulp.dest('./dist/js/'));
 });
 
@@ -28,7 +27,7 @@ gulp.task('minifyScss', function () {
 });
 
 // 新建重新加载reload任务
-gulp.task('reload', ['minifyScss'], function () {
+gulp.task('reload', ['minifyScss','minifyJS'], function () {
 	gulp.src('./index.html').pipe(connect.reload());
 });
 
@@ -46,5 +45,5 @@ gulp.task('default', ['minifyScss', 'minifyJS'], function () {
 	gulp.watch('./main.html', ['rename']);*/
 
 
-	gulp.watch(['./src/scss/*.scss'], ['reload']);
+	gulp.watch(['./src/scss/*.scss','./src/js/*.js'], ['reload']);
 });
