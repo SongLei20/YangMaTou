@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.topbar {
+    background-color: #f8f8f8;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 0;
+    
+}
+.topbar .inner{
+    width: 1200px;
+    height: 30px;
+    margin: 0 auto;
+    background: red;
+}
+.topbar .inner .topbar-l1{
+    float: left;
+   font-size: 12px;
+}
+.topbar a {
+     font-size: 12px;
+    color: #646464;
+}
+
+.topbar .inner .topbar-r1 {
+    float: right;
+}
+
+.topbar .inner .topbar-r1 .nav-item {
+    display: inline-block;
+    position: relative;
+    height: 29px;
+    
+}
+
+.topbar .inner .topbar-r1 .nav-item a {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+
+
+
+
