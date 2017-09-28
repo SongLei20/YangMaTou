@@ -101,6 +101,54 @@ window.onload = function () {
 			aBtnListA[iBtnIndex].className = 'active';
 		}, 4000);
 	}
+    
+    //隐藏分类列表
+    var oCcc = $('ccc'),oCang=$('cang');
+    
+    oCcc.onmousemove=function(){
+    	oCang.style.display='block';
+    	oCang.style.zIndex='9';
+    }
+     
+    oCang.onmousemove=function(){
+    	oCang.style.display='block';
+    	oCang.style.zIndex='9';
+    }
+   
+     oCang.onmouseleave=function(){
+    	oCang.style.display='none';
+    	oCang.style.zIndex='0';
+    }
+    
+    
 
 
+
+
+	var oShijian = document.getElementById('shijian');
+
+			clock();
+
+			setInterval(function () {
+				clock();
+			}, 1000);
+
+
+			function clock() {
+				
+				// 获取年月日时分秒信息
+				var oDate = new Date(),
+					iHour  = (oDate.getHours()),
+					iMinute= (oDate.getMinutes()),
+					iSecond= (oDate.getSeconds());
+					
+				/*var Hour = 20-iHour;*/
+					
+				// 填充日期信息
+				oShijian.innerHTML ='</span><b>距离结束:</b><span>' +  iHour + '</span><b>:</b><span>' + iMinute + '</span><b>:</b><span> '+ iSecond;
+			}
+ 
+	
 };
+
+
